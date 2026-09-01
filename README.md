@@ -72,7 +72,7 @@ Keep files under about 400 KB each. Export at 1600 px wide for full-width use, 9
 
 Best candidates: a point cloud or mesh view of the bridge for the home page hero, one field shot showing the base station set up over a monument, one Fairbank exterior.
 
-## Form behaviour
+## Form behavior
 
 The contact form builds a pre-filled email and opens the visitor's mail application. Nothing is stored or transmitted through a third party, and there is no backend to break.
 
