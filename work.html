@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — selected projects | Axis Fields</title>
+<meta name="description" content="Selected Axis Fields projects: the Gillespie Dam Bridge on Old US 80 over the Gila River, and Verrado Marketplace under construction in Buckeye, Arizona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img class="brandmark" src="assets/favicon.png" alt="">Axis<span>&#8202;/&#8202;</span>Fields</a>
+    <a class="navlink" href="verified-capture.html">Verified Capture</a>
+    <a class="navlink" href="visual-capture.html">Visual Capture</a>
+    <a class="navlink" href="work.html" aria-current="page">Work</a>
+    <a class="navlink" href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap hero">
+    <p class="eyebrow">Selected projects</p>
+    <h1>A ninety-year-old bridge and an active retail build.</h1>
+    <p class="lede">Two Arizona sites with almost nothing in common except the discipline applied to them. One is a steel truss carrying a county road over the Gila. The other is a commercial development going up a few miles from our door. Both were controlled, both were verified, and both can show you where the numbers came from.</p>
+  </section>
+
+  <section class="wrap">
+
+    <div class="entry">
+      <div class="meta">
+        <b>SITE</b>Gillespie Dam Bridge<br>
+        Old US 80 over the Gila River<br>
+        Arlington, Maricopa County<br><br>
+        <b>STRUCTURE</b>Multi-span steel through truss<br>
+        Opened 1 August 1927<br>
+        National Register, 5 May 1981<br><br>
+        <b>METHOD</b>Aerial photogrammetry fused with<br>
+        terrestrial lidar on accessible spans<br>
+        RTK control from an occupied base<br>
+        PPK run as an independent solution<br>
+        Check points withheld from the solve
+      </div>
+      <div>
+        <h3>Gillespie Dam Bridge</h3>
+        <p>One of only two surviving multi-span steel through truss bridges in Arizona, and the main line of US 80 until the 1956 realignment. In 1993 the Gila River destroyed Gillespie Dam outright. The bridge stayed up. Some piers settled and that was the extent of it, because the truss held and the piers were founded in bedrock.</p>
+        <p>This is the project where the method was tightened. Control from a base station we occupied ourselves, ground control in the solve, and check points deliberately held out of it, because a point used to build the model cannot also be the point that grades it. PPK was then run as a completely separate solution, so the site produced two independent answers to compare rather than one answer to trust.</p>
+        <p>Aerial capture was fused with terrestrial lidar on the portions that could be reached on foot, giving close-range detail on connections and bearing seats that an aerial pass alone will not resolve.</p>
+        <!-- ACCURACY: once you are ready to publish residuals, uncomment and fill.
+        <ul class="specs" style="margin-top:1.5rem">
+          <li><span class="t">HORIZ RMSE</span><span class="d">0.0 cm at N withheld check points</span></li>
+          <li><span class="t">VERT RMSE</span><span class="d">0.0 cm at N withheld check points</span></li>
+        </ul>
+        -->
+        <figure style="margin-top:2rem">
+          <img src="assets/gillespie-mesh.webp" alt="Textured three-dimensional reconstruction of the Gillespie Dam Bridge seen obliquely from above, showing the camelback truss spans, the roadway deck, a concrete pier with its shade structure, and the Gila River channel beyond.">
+          <figcaption>Textured reconstruction, Gillespie Dam Bridge. Aerial photogrammetry fused with terrestrial lidar on reachable spans.</figcaption>
+        </figure>
+        <div class="btnrow">
+          <a class="btn" href="https://app.one3d.ai/twins/63655?invcode=q8p2QYW-" target="_blank" rel="noopener">Open the digital twin</a>
+          <a class="btn ghost" href="https://youtu.be/UhIcvE9bb8o" target="_blank" rel="noopener">Watch the flythrough</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta">
+        <b>SITE</b>Verrado Marketplace<br>
+        Buckeye, Maricopa County<br>
+        Section 31, T2N R2W<br><br>
+        <b>TYPE</b>Commercial retail development<br>
+        Active construction<br><br>
+        <b>METHOD</b>Recorded plat traverse reduction<br>
+        Predicted monument positions<br>
+        Field recovery and RTK occupation<br>
+        Aerial capture flown to control
+      </div>
+      <div>
+        <h3>Verrado Marketplace</h3>
+        <p>A retail development under construction in Buckeye, on a replat whose boundary was already recorded. That record is an asset most aerial jobs ignore.</p>
+        <p>Before flying, the plat's line and curve tables were reduced from bearing and distance into predicted positions for every monument called out on it. Brass caps, rebar, found pins. Those positions are not measurements and we do not present them as such. They are search locations, accurate enough to put a crew within arm's reach of a monument instead of sweeping a corner with a shovel.</p>
+        <p>The crew then recovered what was actually there and occupied it with RTK. Only at that point does a coordinate become a measurement, and only the occupied ones went into the solve. Anything predicted but not found was recorded as not recovered rather than quietly dropped.</p>
+        <figure style="margin-top:2rem">
+          <img src="assets/verrado-marketplace.webp" alt="Oblique aerial photograph of Verrado Marketplace under construction, showing completed retail buildings with rooftop mechanical units, freshly striped parking areas, lifts and material staging on unfinished pads, and graded lots awaiting building.">
+          <figcaption>Verrado Marketplace during construction. Flown to recovered monument control rather than to the aircraft's own position estimate.</figcaption>
+        </figure>
+        <div class="btnrow">
+          <a class="btn" href="https://app.one3d.ai/twins/60886?invcode=Dr5DPj85" target="_blank" rel="noopener">Open the digital twin</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Third-party profile</p>
+    <h2>Somebody outside the company described it.</h2>
+    <div class="narrow">
+      <p>Axis Fields was profiled by an Embry-Riddle Aeronautical University student for a UAS remote sensing course in June 2026.</p>
+      <p>It is worth being precise about what that is. The report was written from correspondence with the founder rather than an independent audit of our data, and it predates the tier structure described on this site. We are posting it in full anyway, because an outside description of the company is worth reading and because the source discipline we apply to coordinates applies to our own marketing too.</p>
+      <p class="small">Report by Brandon Stringer. Published with permission. Acknowledgement of the author&#8217;s institution does not constitute or imply endorsement by Embry-Riddle Aeronautical University.</p>
+      <div class="btnrow">
+        <a class="btn ghost" href="assets/axis-fields-third-party-profile.pdf" target="_blank" rel="noopener">Read the profile (PDF, 4 pages)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <p class="eyebrow">What the two have in common</p>
+      <h2>Neither model is anchored to a guess.</h2>
+      <p class="lede" style="max-width:58ch">A bridge from 1927 and a retail pad poured last quarter need the same thing from us: control that was occupied, check points that were withheld, and a written record of which is which.</p>
+      <p style="max-width:58ch">Change the site, change the sensor, change the deliverable. The chain does not change.</p>
+      <div class="btnrow"><a class="btn" href="contact.html">Get in touch</a></div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <img class="footlogo" src="assets/axis-fields-logo.webp" alt="Axis Fields LLC">
+        <h4>Axis Fields LLC</h4>
+        <p class="small" style="color:#9AA0A0">Clear insight. Stronger spatial intelligence.</p>
+        <p class="small" style="color:#9AA0A0">Buckeye, Arizona. Serving the Phoenix metropolitan area and statewide, with travel by arrangement.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="verified-capture.html">Verified Capture</a></li>
+          <li><a href="visual-capture.html">Visual Capture</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@axisfields.com">info@axisfields.com</a></li>
+          <li><a href="work.html">Project examples</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule">
+      <span>&#169; 2026 Axis Fields LLC</span>
+      <span>Veteran-owned</span>
+      <span>FAA Part 107</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

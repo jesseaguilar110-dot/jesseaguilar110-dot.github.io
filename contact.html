@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Axis Fields</title>
+<meta name="description" content="Start a project with Axis Fields. Aerial mapping, reality capture and spatial intelligence based in Buckeye, Arizona, serving the Phoenix metro area and statewide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .form { max-width: 44rem; margin-top: 2.5rem; }
+  .field { margin-bottom: 1.5rem; }
+  .field label {
+    display: block; font-family: var(--f-data); font-size: .74rem;
+    letter-spacing: .08em; color: var(--brass); margin-bottom: .5rem;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%; font-family: var(--f-body); font-size: 1rem; color: var(--ink);
+    background: transparent; border: 1px solid var(--rule);
+    padding: .8rem .9rem; border-radius: 0;
+    transition: border-color .18s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--brass); outline: none;
+  }
+  .field textarea { min-height: 9rem; resize: vertical; line-height: 1.55; }
+  .fieldrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 640px) { .fieldrow { grid-template-columns: 1fr; gap: 0; } }
+  .hp { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img class="brandmark" src="assets/favicon.png" alt="">Axis<span>&#8202;/&#8202;</span>Fields</a>
+    <a class="navlink" href="verified-capture.html">Verified Capture</a>
+    <a class="navlink" href="visual-capture.html">Visual Capture</a>
+    <a class="navlink" href="work.html">Work</a>
+    <a class="navlink" href="contact.html" aria-current="page">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap hero">
+    <p class="eyebrow">Start here</p>
+    <h1>Tell us what the data has to prove.</h1>
+    <p class="lede">Not the flight, the decision. Whether somebody is going to measure from it, build against it, or simply look at it changes the tier, the control plan, the aircraft and the price. Answer that one question and the quote comes back right the first time.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="row">
+      <h3>Direct</h3>
+      <div>
+        <p><a href="mailto:info@axisfields.com" style="font-size:1.2rem">info@axisfields.com</a></p>
+        <p class="small">Axis Fields LLC, Buckeye, Arizona. Phoenix metropolitan area and statewide, travel outside the region by arrangement.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3>Worth including</h3>
+      <div>
+        <p>Any of these you already know. None of them are required to start a conversation.</p>
+        <ul class="plain">
+          <li>Where the site is, and roughly how large</li>
+          <li>What the deliverable has to support, and who receives it</li>
+          <li>Whether anything will be measured from the result</li>
+          <li>Any accuracy or format requirement written into a scope or specification</li>
+          <li>Whether the site has access restrictions, an escort requirement or controlled airspace</li>
+          <li>The date the result is needed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>Project inquiry</h2>
+    <p class="narrow">This opens a pre-filled message in your own mail application so nothing is stored anywhere in between. If you would rather just write, the address above is the same one.</p>
+
+    <div class="form">
+      <div class="fieldrow">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-org">Organisation</label>
+          <input id="f-org" type="text" autocomplete="organization">
+        </div>
+      </div>
+
+      <div class="fieldrow">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone (optional)</label>
+          <input id="f-phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-tier">What is the result for</label>
+        <select id="f-tier">
+          <option value="Not sure yet">Not sure yet, help me decide</option>
+          <option value="Verified Capture">Something will be measured from it</option>
+          <option value="Visual Capture">It only needs to look right</option>
+          <option value="Public agency">Public agency or municipal work</option>
+          <option value="Teaming or subcontract">Teaming or subcontract inquiry</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-site">Site location and approximate size</label>
+        <input id="f-site" type="text" placeholder="City or coordinates, and acreage or structure count">
+      </div>
+
+      <div class="field">
+        <label for="f-msg">What decision does the data have to support</label>
+        <textarea id="f-msg" placeholder="Deliverable, who receives it, any accuracy or format requirement, access constraints, and the date you need it."></textarea>
+      </div>
+
+      <input class="hp" type="text" id="f-company" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="btnrow" style="margin-top:.5rem">
+        <button class="btn" type="button" id="f-send">Compose the message</button>
+      </div>
+      <p class="small" id="f-note" style="margin-top:1rem"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <img class="footlogo" src="assets/axis-fields-logo.webp" alt="Axis Fields LLC">
+        <h4>Axis Fields LLC</h4>
+        <p class="small" style="color:#9AA0A0">Clear insight. Stronger spatial intelligence.</p>
+        <p class="small" style="color:#9AA0A0">Buckeye, Arizona. Serving the Phoenix metropolitan area and statewide, with travel by arrangement.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="verified-capture.html">Verified Capture</a></li>
+          <li><a href="visual-capture.html">Visual Capture</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@axisfields.com">info@axisfields.com</a></li>
+          <li><a href="work.html">Project examples</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule">
+      <span>&#169; 2026 Axis Fields LLC</span>
+      <span>Veteran-owned</span>
+      <span>FAA Part 107</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Builds a mailto link from the form. No backend, nothing stored in transit.
+   If you later want inquiries delivered without opening a mail client, sign up
+   for a form relay service and replace this block with a normal <form action="...">. */
+(function () {
+  var btn = document.getElementById('f-send');
+  var note = document.getElementById('f-note');
+  var TO = 'info@axisfields.com';
+
+  function val(id) { return (document.getElementById(id).value || '').trim(); }
+
+  btn.addEventListener('click', function () {
+    if (val('f-company')) { return; }
+
+    var name = val('f-name');
+    var email = val('f-email');
+
+    if (!name || !email) {
+      note.textContent = 'Add your name and email so there is a way to reply.';
+      note.style.color = 'var(--signal)';
+      document.getElementById(name ? 'f-email' : 'f-name').focus();
+      return;
+    }
+
+    var tier = val('f-tier');
+    var subject = 'Project inquiry — ' + name + (val('f-org') ? ' (' + val('f-org') + ')' : '');
+
+    var body = [
+      'Name: ' + name,
+      'Organisation: ' + (val('f-org') || '—'),
+      'Email: ' + email,
+      'Phone: ' + (val('f-phone') || '—'),
+      '',
+      'What the result is for: ' + tier,
+      'Site location and size: ' + (val('f-site') || '—'),
+      '',
+      'Decision the data has to support:',
+      val('f-msg') || '—'
+    ].join('\n');
+
+    note.style.color = 'var(--slate)';
+    note.textContent = 'Opening your mail application. If nothing happens, email ' + TO + ' directly.';
+
+    window.location.href = 'mailto:' + TO +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+
+</body>
+</html>

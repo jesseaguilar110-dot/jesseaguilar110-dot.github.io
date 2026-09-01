@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verified Capture — RTK-anchored aerial mapping | Axis Fields</title>
+<meta name="description" content="RTK and PPK corrected aerial mapping anchored to ground control and graded against withheld check points. Orthomosaics, point clouds, digital surface models and digital twins with a documented provenance record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img class="brandmark" src="assets/favicon.png" alt="">Axis<span>&#8202;/&#8202;</span>Fields</a>
+    <a class="navlink" href="verified-capture.html" aria-current="page">Verified Capture</a>
+    <a class="navlink" href="visual-capture.html">Visual Capture</a>
+    <a class="navlink" href="work.html">Work</a>
+    <a class="navlink" href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap hero">
+    <p class="eyebrow">Tier 1 &#183; Measurable</p>
+    <h1>Verified Capture</h1>
+    <p class="lede">Corrected, controlled and independently graded. When somebody downstream is going to measure from the model, take a quantity off it, or design against it, this is the tier that survives the question of where the numbers came from.</p>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Method</p>
+    <h2>Control points build the model. Check points grade it.</h2>
+    <p class="lede narrow">These are two different things and conflating them is how unverified numbers end up in authoritative systems. We keep them separate on every job.</p>
+
+    <ul class="specs" style="margin-top:2.5rem">
+      <li><span class="t">BASE</span><span class="d">A base station we occupy ourselves, logging raw observations for the duration of the flight. On remote sites this removes any dependence on cellular coverage or a correction subscription.</span></li>
+      <li><span class="t">CORRECTION</span><span class="d">RTK in real time, PPK in post, or both run as independent solutions so there are two answers to compare rather than one answer to trust.</span></li>
+      <li><span class="t">CONTROL POINTS</span><span class="d">Surveyed targets fed into the reconstruction before alignment. These shape the solve.</span></li>
+      <li><span class="t">CHECK POINTS</span><span class="d">Surveyed targets deliberately withheld from the solve. The model never sees them. Residuals are then measured at those locations to find out what the reconstruction actually got wrong.</span></li>
+      <li><span class="t">REPORTING</span><span class="d">Horizontal and vertical residuals at the withheld points, the number of points used, the correction state, and the coordinate reference frame and epoch, all delivered with the data.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <div class="media">
+      <figure>
+        <img src="assets/capture-geometry.webp" alt="Reconstruction viewport showing hundreds of individual camera positions arranged in stacked orbits around a communications tower, with the resulting point cloud inside them.">
+        <figcaption>Camera stations recovered from an orbital capture. The geometry of the flight is part of the record, not an afterthought.</figcaption>
+      </figure>
+      <div>
+        <h3 class="mt0">The flight is evidence too</h3>
+        <p>Coverage, overlap and camera geometry decide what the reconstruction can resolve before any processing happens. Those parameters are planned against the deliverable and retained with it, so a result can be traced back to how it was flown.</p>
+        <p class="small">A capture that cannot be described step by step is a capture that cannot be repeated, and one that cannot be repeated cannot be defended.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Deliverables</p>
+    <h2>What arrives.</h2>
+
+    <div class="row">
+      <h3>Measured products</h3>
+      <ul class="plain">
+        <li>Orthomosaics at specified ground sample distance</li>
+        <li>Digital surface and digital terrain models</li>
+        <li>Classified and unclassified point clouds</li>
+        <li>Textured 3D meshes and digital twins</li>
+        <li>Contours, cross sections and volumetric computations</li>
+        <li>Asset inventories and extracted features</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h3>The record that comes with them</h3>
+      <ul class="plain">
+        <li>Control and check point report with measured residuals</li>
+        <li>Correction state and base station occupation record</li>
+        <li>Coordinate reference frame, vertical datum and epoch</li>
+        <li>Source tagging on every reported attribute: measured, observed, reported, or not assessed</li>
+        <li>A written statement of what was not captured and why</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h3>Integration</h3>
+      <div>
+        <p>Delivered into the systems you already run rather than a platform you have to adopt. ArcGIS Pro and ArcGIS Online, QGIS, CAD, and standard interchange formats.</p>
+        <p class="small">Most clients already own capable software and are using a fraction of it. Replacing that is rarely the right recommendation, so we do not lead with it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="media flip">
+      <figure>
+        <img src="assets/industrial-mesh.webp" alt="Untextured mesh of an aggregate batch plant, showing conveyor galleries, hoppers, silos and structural steel as bare measured geometry.">
+        <figcaption>Industrial plant reconstruction with texture removed. What is left is the measured surface itself.</figcaption>
+      </figure>
+      <div>
+        <h3 class="mt0">Strip the texture and the geometry is what remains</h3>
+        <p>Photographs make a site look convincing. Geometry is what you take a dimension from. Every product in this tier is built so the second one holds up on its own, without the first one carrying it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Applications</p>
+    <h2>Where this tier is the right answer.</h2>
+    <ul class="plain">
+      <li>Infrastructure and bridge documentation, including historic and heritage structures</li>
+      <li>Construction progress verification and earthwork quantities</li>
+      <li>Corridor and utility mapping, right-of-way base data, as-built support</li>
+      <li>Facility and public safety pre-incident intelligence</li>
+      <li>Multi-temporal change detection where two dates have to be comparable</li>
+      <li>Any deliverable a third party will measure from, design against, or rely on in a submittal</li>
+    </ul>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <p class="eyebrow">Limits, stated up front</p>
+      <h2>What Verified Capture is not.</h2>
+      <div class="stack" style="max-width:64ch">
+        <p><strong style="color:#F3F4F2">It is not a survey, and we do not call it one.</strong> The term survey-grade is reserved for work verified and stamped by a licensed professional surveyor. Axis Fields asserts RTK-anchored, centimeter-level, measurable and defensible geometry with reported residuals. That is a different and narrower claim, and we hold the line on it.</p>
+        <p>Where a project genuinely requires a stamped, certified product, we bring a licensed professional surveyor onto the engagement rather than stretching the language. Tell us early and it costs less.</p>
+        <p><strong style="color:#F3F4F2">Photogrammetry and lidar do not see through walls.</strong> No interior access means interiors come back hollow. We say so in writing before collection, not after, because a responder who does not know a space is unmapped will assume it is mapped.</p>
+        <p><strong style="color:#F3F4F2">A datasheet figure is not a result.</strong> We will not quote a sensor's relative accuracy specification as though it were verified absolute accuracy achieved on your site. If you have been given a number like that by anyone, ask which points were withheld from the solve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="eyebrow">Equipment</p>
+    <h2>The tier is enforced by the hardware, not the invoice.</h2>
+    <p class="lede narrow">Verified work flies on specific aircraft with specific ground equipment. A Visual Capture aircraft cannot be upgraded into this tier by relabelling the job.</p>
+    <ul class="specs" style="margin-top:2.5rem">
+      <li><span class="t">AIRCRAFT</span><span class="d">DJI Matrice 4 Enterprise, mechanical shutter, RTK. Aircraft assignment is recorded per mission.</span></li>
+      <li><span class="t">GNSS</span><span class="d">Emlid Reach RS3 base station and Reach RX rover. Raw observation logging for independent PPK post-processing.</span></li>
+      <li><span class="t">TERRESTRIAL</span><span class="d">Handheld SLAM lidar for occluded geometry, used for single-scan gap fill on surfaces aerial capture cannot reach.</span></li>
+      <li><span class="t">PROCESSING</span><span class="d">RealityScan, Agisoft Metashape, DJI Terra, Emlid Studio, CloudCompare for residual verification, ArcGIS Pro and QGIS for delivery.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <h2 class="narrow">What decision does the data have to support?</h2>
+    <p class="lede narrow">Answer that and the control plan, the aircraft, the ground sample distance and the price all follow from it.</p>
+    <div class="btnrow">
+      <a class="btn" href="contact.html">Start a project</a>
+      <a class="btn ghost" href="visual-capture.html">See the visual tier</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <img class="footlogo" src="assets/axis-fields-logo.webp" alt="Axis Fields LLC">
+        <h4>Axis Fields LLC</h4>
+        <p class="small" style="color:#9AA0A0">Clear insight. Stronger spatial intelligence.</p>
+        <p class="small" style="color:#9AA0A0">Buckeye, Arizona. Serving the Phoenix metropolitan area and statewide, with travel by arrangement.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="verified-capture.html">Verified Capture</a></li>
+          <li><a href="visual-capture.html">Visual Capture</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@axisfields.com">info@axisfields.com</a></li>
+          <li><a href="work.html">Project examples</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule">
+      <span>&#169; 2026 Axis Fields LLC</span>
+      <span>Veteran-owned</span>
+      <span>FAA Part 107</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
