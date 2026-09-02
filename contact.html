@@ -87,7 +87,7 @@
 
   <section class="wrap">
     <h2>Project inquiry</h2>
-    <p class="narrow">Send this and it lands in our inbox directly. If you would rather write your own email, the address above is the same one.</p>
+    <p class="narrow" id="f-intro">Send this and it lands in our inbox directly. If you would rather write your own email, the address above is the same one.</p>
 
     <div class="form">
       <div class="fieldrow">
@@ -221,6 +221,8 @@
       });
       if (res.ok) {
         var form = document.querySelector('.form');
+        var intro = document.getElementById('f-intro');
+        if (intro) { intro.style.display = 'none'; }
         form.innerHTML = '<h3 class="mt0">Thank you, that came through.</h3>'
           + '<p>We read every inquiry ourselves and will reply from ' + TO + '. If your project has a date attached, say so in your reply and we will work backwards from it.</p>'
           + '<p class="small">Nothing further is needed from you right now.</p>';
