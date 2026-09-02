@@ -87,7 +87,7 @@
 
   <section class="wrap">
     <h2>Project inquiry</h2>
-    <p class="narrow">This opens a pre-filled message in your own mail application so nothing is stored anywhere in between. If you would rather just write, the address above is the same one.</p>
+    <p class="narrow">Send this and it lands in our inbox directly. If you would rather write your own email, the address above is the same one.</p>
 
     <div class="form">
       <div class="fieldrow">
@@ -136,7 +136,7 @@
       <input class="hp" type="text" id="f-company" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <div class="btnrow" style="margin-top:.5rem">
-        <button class="btn" type="button" id="f-send">Compose the message</button>
+        <button class="btn" type="button" id="f-send">Send inquiry</button>
       </div>
       <p class="small" id="f-note" style="margin-top:1rem"></p>
     </div>
@@ -177,51 +177,63 @@
 </footer>
 
 <script>
-/* Builds a mailto link from the form. No backend, nothing stored in transit.
-   If you later want inquiries delivered without opening a mail client, sign up
-   for a form relay service and replace this block with a normal <form action="...">. */
 (function () {
+  var ENDPOINT = "https://formspree.io/f/xoeqdwnz";
+  var TO = "info@axisfields.com";
   var btn = document.getElementById('f-send');
   var note = document.getElementById('f-note');
-  var TO = 'info@axisfields.com';
+  function val(id){ var e=document.getElementById(id); return e ? (e.value||'').trim() : ''; }
+  function say(msg,color){ note.textContent=msg; note.style.color=color; }
 
-  function val(id) { return (document.getElementById(id).value || '').trim(); }
-
-  btn.addEventListener('click', function () {
+  btn.addEventListener('click', async function () {
     if (val('f-company')) { return; }
-
-    var name = val('f-name');
-    var email = val('f-email');
-
+    var name=val('f-name'), email=val('f-email');
     if (!name || !email) {
-      note.textContent = 'Add your name and email so there is a way to reply.';
-      note.style.color = 'var(--signal)';
-      document.getElementById(name ? 'f-email' : 'f-name').focus();
+      say('Add your name and email so there is a way to reply.','var(--signal)');
+      document.getElementById(name?'f-email':'f-name').focus();
       return;
     }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      say('That email address does not look right.','var(--signal)');
+      document.getElementById('f-email').focus();
+      return;
+    }
+    btn.disabled = true;
+    var original = btn.textContent;
+    btn.textContent = 'Sending...';
+    say('','var(--slate)');
 
-    var tier = val('f-tier');
-    var subject = 'Project inquiry — ' + name + (val('f-org') ? ' (' + val('f-org') + ')' : '');
+    var payload = {
+      name: name,
+      organization: val('f-org') || '-',
+      email: email,
+      phone: val('f-phone') || '-',
+      "what the result is for": val('f-tier'),
+      "site location and size": val('f-site') || '-',
+      "decision the data supports": val('f-msg') || '-',
+      _subject: 'Project inquiry - ' + name + (val('f-org') ? ' (' + val('f-org') + ')' : '')
+    };
 
-    var body = [
-      'Name: ' + name,
-      'Organization: ' + (val('f-org') || '—'),
-      'Email: ' + email,
-      'Phone: ' + (val('f-phone') || '—'),
-      '',
-      'What the result is for: ' + tier,
-      'Site location and size: ' + (val('f-site') || '—'),
-      '',
-      'Decision the data has to support:',
-      val('f-msg') || '—'
-    ].join('\n');
-
-    note.style.color = 'var(--slate)';
-    note.textContent = 'Opening your mail application. If nothing happens, email ' + TO + ' directly.';
-
-    window.location.href = 'mailto:' + TO +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
+    try {
+      var res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        var form = document.querySelector('.form');
+        form.innerHTML = '<h3 class="mt0">Thank you, that came through.</h3>'
+          + '<p>We read every inquiry ourselves and will reply from ' + TO + '. If your project has a date attached, say so in your reply and we will work backwards from it.</p>'
+          + '<p class="small">Nothing further is needed from you right now.</p>';
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      throw new Error('bad status ' + res.status);
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = original;
+      say('That did not send. Please email ' + TO + ' directly and we will pick it up there.','var(--signal)');
+    }
   });
 })();
 </script>
