@@ -295,3 +295,40 @@ figcaption {
 }
 
 .footlogo { width: 150px; height: auto; margin-bottom: 1.1rem; opacity: .92; }
+
+/* Card thumbnails inside .fork */
+.fork.cards { grid-template-columns: 1fr 1fr; }
+.fork.cards + .fork.cards { border-top: 0; }
+.fork.cards > div:first-child { background: transparent; }
+.fork figure { margin-bottom: 1.2rem; }
+.fork figure img { aspect-ratio: 3 / 2; object-fit: cover; }
+.fork h3 { margin-top: 0; }
+@media (max-width: 860px) { .fork.cards { grid-template-columns: 1fr; } }
+
+/* ---------- Click-to-load video (no third-party request until play) ---------- */
+.vid { position: relative; margin: 0; }
+.vid button.vidbtn {
+  display: block; width: 100%; padding: 0; border: 1px solid var(--rule);
+  background: #000; cursor: pointer; position: relative; line-height: 0;
+}
+.dark .vid button.vidbtn { border-color: var(--rule-dark); }
+.vid button.vidbtn img { width: 100%; height: auto; display: block; opacity: .88; transition: opacity .25s ease; border: 0; }
+.vid button.vidbtn:hover img, .vid button.vidbtn:focus-visible img { opacity: 1; }
+.vid .play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  width: 76px; height: 54px; border-radius: 6px;
+  background: rgba(12,13,14,.74); border: 1px solid rgba(241,242,238,.5);
+  display: grid; place-items: center; transition: background .25s ease;
+}
+.vid button.vidbtn:hover .play, .vid button.vidbtn:focus-visible .play { background: var(--brass); border-color: var(--brass); }
+.vid .play::after {
+  content: ""; width: 0; height: 0; margin-left: 4px;
+  border-left: 17px solid #F1F2EE; border-top: 10px solid transparent; border-bottom: 10px solid transparent;
+}
+.vid .vidlabel {
+  position: absolute; left: 0; bottom: 0; right: 0; padding: .85rem 1rem;
+  background: linear-gradient(to top, rgba(12,13,14,.82), rgba(12,13,14,0));
+  color: #F1F2EE; font-family: var(--f-data); font-size: .72rem; letter-spacing: .05em;
+  text-align: left; pointer-events: none;
+}
+.vid iframe { width: 100%; aspect-ratio: 16/9; display: block; border: 1px solid var(--rule); }
