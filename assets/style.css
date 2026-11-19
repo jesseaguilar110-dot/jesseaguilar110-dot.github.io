@@ -332,3 +332,25 @@ figcaption {
   text-align: left; pointer-events: none;
 }
 .vid iframe { width: 100%; aspect-ratio: 16/9; display: block; border: 1px solid var(--rule); }
+
+/* ---------- Certifications (added Nov 2026) ----------
+   Official SBA icons are shown unmodified: no recolor, crop, filter or shadow.
+   Keep them smaller than the Axis Fields brand and never over photography. */
+section.trust { padding-block: clamp(2rem, 4vw, 3rem); }
+.trustrow { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2rem); }
+.trustrow .eyebrow { margin-bottom: .4rem; }
+.certicon { width: 72px; height: auto; flex: none; background: #fff; }
+.trustline { margin: 0; font-weight: 600; color: var(--ink); display: flex; flex-wrap: wrap; column-gap: 1.1rem; row-gap: .2rem; }
+.trustline span + span::before { content: "\00B7"; margin-right: 1.1rem; color: var(--slate); }
+.trustlinks { margin: .6rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: .93rem; }
+.trustlinks a { color: var(--ink-2); }
+.certblock { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 1.5rem 0; }
+.textbadge { display: inline-block; font-family: var(--f-data); font-size: .74rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--ink); padding: .7rem .9rem; line-height: 1.3; }
+.tbd { font-family: var(--f-data); font-size: .85rem; color: var(--signal); }
+.foot .rule span + span::before { content: none; }
+@media (max-width: 560px) {
+  .trustrow { align-items: flex-start; }
+  .certicon { width: 56px; }
+  .trustline { flex-direction: column; }
+  .trustline span + span::before { content: none; }
+}
